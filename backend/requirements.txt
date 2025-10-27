@@ -1,0 +1,15 @@
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-dotenv==1.0.0
+numpy==1.26.3
+opencv-python==4.9.0.80
+tensorflow==2.15.0
+keras==2.15.0
+h5py==3.15.1
+Pillow==10.2.0
+scipy==1.12.0
+httpx==0.26.0
+python-multipart==0.0.6
+pydantic==2.5.3
+pydantic-settings==2.1.0
+watchfiles==1.1.1
