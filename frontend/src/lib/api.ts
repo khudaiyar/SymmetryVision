@@ -6,17 +6,19 @@ import type {
   ErrorResponse
 } from '@/types';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+// Use relative URL for API calls (same domain)
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '';
 const API_PREFIX = '/api/v1';
 
 // Create axios instance
 const apiClient = axios.create({
   baseURL: `${API_BASE_URL}${API_PREFIX}`,
-  timeout: 60000, // 60 seconds for image processing
+  timeout: 60000,
   headers: {
     'Content-Type': 'application/json',
   },
 });
+
 
 // Request interceptor
 apiClient.interceptors.request.use(

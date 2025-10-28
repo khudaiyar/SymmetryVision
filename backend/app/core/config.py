@@ -9,17 +9,19 @@ class Settings(BaseSettings):
     # Application
     APP_NAME: str = "SymmetryVision"
     APP_VERSION: str = "1.0.0"
-    DEBUG: bool = True
+    DEBUG: bool = False  # Changed to False for production
 
     # API
     API_HOST: str = "0.0.0.0"
-    API_PORT: int = 8000
+    API_PORT: int = int(os.environ.get("PORT", 8000))  # Use Render's PORT
     API_PREFIX: str = "/api/v1"
 
-    # CORS
+    # CORS - Add your Render URL
     ALLOWED_ORIGINS: List[str] = [
         "http://localhost:3000",
-        "http://127.0.0.1:3000"
+        "http://127.0.0.1:3000",
+        "https://symmetryvision-1.onrender.com",  # Add your Render URL
+        "http://symmetryvision-1.onrender.com"
     ]
 
     # File Storage
