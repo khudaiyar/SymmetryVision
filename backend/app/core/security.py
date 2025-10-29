@@ -8,7 +8,13 @@ def setup_cors(app):
     """Configure CORS middleware"""
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=settings.ALLOWED_ORIGINS,
+        allow_origins=[
+            "http://localhost:3000",
+            "http://127.0.0.1:3000",
+            "https://symmetry-vision.vercel.app", 
+            "https://*.vercel.app", 
+            "https://symmetryvision-1.onrender.com"
+        ],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
@@ -17,7 +23,6 @@ def setup_cors(app):
 
 def validate_image_file(file: UploadFile) -> None:
     """Validate uploaded image file"""
-
     # Check file extension
     file_ext = os.path.splitext(file.filename)[1].lower()
     if file_ext not in settings.ALLOWED_EXTENSIONS:
@@ -36,7 +41,6 @@ def validate_image_file(file: UploadFile) -> None:
 
 async def validate_file_size(file: UploadFile) -> None:
     """Validate file size (must be called after reading file)"""
-
     # Read file content to check size
     content = await file.read()
     size = len(content)
@@ -49,5 +53,4 @@ async def validate_file_size(file: UploadFile) -> None:
 
     # Reset file pointer to beginning
     await file.seek(0)
-
     return content
