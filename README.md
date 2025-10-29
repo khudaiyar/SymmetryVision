@@ -12,7 +12,7 @@ Why I Built This
 
 During my Master's research in Computer Vision, I spent countless hours manually analyzing architectural images for symmetry patterns. The process was frustrating: mark the center line, visually compare both sides, try to quantify what I saw, repeat for hundreds of images. Existing solutions either cost thousands of dollars for licenses or required complex MATLAB scripts that took longer to debug than to use.
 
-One late night, after analyzing my 50th image of the day, I thought: **"There has to be a better way."
+One late night, after analyzing my 50th image of the day, I thought: "There has to be a better way."
 
 That's when I decided to build SymmetryVision. Not just for myself, but for every researcher, designer, and student who needs to understand symmetry objectively and efficiently.
 
@@ -299,3 +299,4 @@ This project emerged from practical research needs during my Master's program in
 - Open-source community for inspiration and resources
 
 ---
+
