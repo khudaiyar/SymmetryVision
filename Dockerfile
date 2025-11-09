@@ -1,16 +1,17 @@
+# Use official Python 3.12 slim image
 FROM python:3.12-slim
 
-# Set working directory to backend
+# Set working directory to backend folder
 WORKDIR /app/backend
 
-# Copy requirements and install dependencies
+# Copy requirements and install
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the backend source code
+# Copy backend source code
 COPY backend/ ./backend
 
-# Expose Render port
+# Set Render port
 ENV PORT=8080
 EXPOSE 8080
 
